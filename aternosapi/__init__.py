@@ -30,7 +30,7 @@ class AternosAPI():
         status = status.strip()
         return status
     
-    def GetPlayerCount(self):
+    def GetOnlinePlayerCount(self):
         """Get count of players/slots from homepage."""
         webserver = requests.get(url='https://aternos.org/server/',cookies=self.cookies,headers=self.headers)
         webdata = BeautifulSoup(webserver.content, 'html.parser')
@@ -51,6 +51,13 @@ class AternosAPI():
             player = player.strip()
             result.append(player)
         return result
+
+    def GetPlayerCount(self):
+        """Get amount of players who logged in ever."""
+        webserver = requests.get(url="https://aternos.org/files/world/advancements",cookies=self.cookies,headers=self.headers)
+        webdata = BeautifulSoup(webserver.content, 'html.parser')
+        players = webdata.findAll('div', class_="file clickable")
+        return len(players)
 
     def StartServer(self):
         """Skip queue and start server."""
