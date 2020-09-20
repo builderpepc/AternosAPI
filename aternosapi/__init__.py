@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
+
 class AternosAPI():
     def __init__(self, headers, cookie, SEC):
         self.headers = {}
@@ -19,7 +20,7 @@ class AternosAPI():
         if ("logout" in webserver):
             pass
         else:
-            return "Invaild cookie"
+            return "Invalid Cookie"
 
     def GetStatus(self):
         """Get server status as a str."""
@@ -29,6 +30,14 @@ class AternosAPI():
         status = status.strip()
         return status
     
+    def GetPlayerCount(self):
+        """Get count of players/slots from homepage."""
+        webserver = requests.get(url='https://aternos.org/server/',cookies=self.cookies,headers=self.headers)
+        webdata = BeautifulSoup(webserver.content, 'html.parser')
+        status = webdata.find('span', id='players').get_text()
+        status = status.strip()
+        return status
+
     def GetPlayers(self):
         """Get list of player names."""
         webserver = requests.get(url='https://aternos.org/players/',cookies=self.cookies,headers=self.headers)
