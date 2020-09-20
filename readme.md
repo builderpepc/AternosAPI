@@ -5,7 +5,7 @@ I wanted to add some features to this __unofficial__ Aternos API, which uses Bea
  - Get started using [@Duerocraft](https://github.com/Duerocraft)'s [Youtube video](https://www.youtube.com/watch?v=wGM9V9tHJ2o). The functions used are not outdates, but you won't need all the cookies in the original example.
  - You will need to get your cookies to use this "API", which is really just a set of web scraping functions. See below.
  
-# Getting Cookies
+### Getting Cookies
 - Open the Aternos server homepage after logging in (aternos.org/server).
 - Open Inspect Element or your browser's equivalent. Then switch to the network tab.
 - Click on an event whose "Domain" is aternos.org. Look to the right for the Headers section.
