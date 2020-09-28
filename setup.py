@@ -10,12 +10,12 @@ def readme():
     return README
 
 setuptools.setup(
-    name="AternosAPI",
+    name="AternosAPI2",
     version="1.0.0",
-    description="A Python Aternos API",
+    description="Interact with Aternos using Python",
     long_description=readme(),
     long_description_content_type="text/markdown",
-    url="https://github.com/Duerocraft/AternosAPI",
+    url="https://github.com/builderpepc/AternosAPI",
     packages=["aternosapi"],
     install_requires=requirements,
     license="GNU",
